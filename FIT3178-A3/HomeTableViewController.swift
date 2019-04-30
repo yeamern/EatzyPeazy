@@ -40,9 +40,12 @@ class HomeTableViewController: UITableViewController {
         if (indexPath.section == 3) {
             if (indexPath.row == 0) {
                 performSegue(withIdentifier: "bmiSegue", sender: self)
-            /*
-            } else if (indexPath.row == 1) {
-            */
+            }
+        } else if (indexPath.section == 2) {
+            if (indexPath.row == 0) {
+                performSegue(withIdentifier: "timerSegue", sender: self)
+            } else if (indexPath.row == 2) {
+                performSegue(withIdentifier: "microwaveSegue", sender: self)
             }
         }
     }

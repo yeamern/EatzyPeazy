@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED1BB1DF22781F7200FE2120 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1BB1DE22781F7200FE2120 /* HomeTableViewController.swift */; };
+		ED931D6422783540006C9758 /* MicrowaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED931D6322783540006C9758 /* MicrowaveViewController.swift */; };
 		EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE40E2276C06F005F0050 /* AppDelegate.swift */; };
 		EDABE4112276C06F005F0050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE4102276C06F005F0050 /* ViewController.swift */; };
 		EDABE4142276C06F005F0050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABE4122276C06F005F0050 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		ED1BB1DE22781F7200FE2120 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		ED931D6322783540006C9758 /* MicrowaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrowaveViewController.swift; sourceTree = "<group>"; };
 		EDABE40B2276C06F005F0050 /* FIT3178-A3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-A3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABE40E2276C06F005F0050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDABE4102276C06F005F0050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				EDABE41A2276C070005F0050 /* Info.plist */,
 				EDABE4202276CD9F005F0050 /* Bmi.swift */,
 				ED1BB1DE22781F7200FE2120 /* HomeTableViewController.swift */,
+				ED931D6322783540006C9758 /* MicrowaveViewController.swift */,
 			);
 			path = "FIT3178-A3";
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				EDABE4212276CD9F005F0050 /* Bmi.swift in Sources */,
 				EDABE4112276C06F005F0050 /* ViewController.swift in Sources */,
 				EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */,
+				ED931D6422783540006C9758 /* MicrowaveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
