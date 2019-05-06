@@ -1,14 +1,14 @@
 //
-//  HomeTableViewController.swift
+//  ExpiryTableViewController.swift
 //  FIT3178-A3
 //
-//  Created by Yeamern Chuan on 30/4/19.
+//  Created by Yeamern Chuan on 6/5/19.
 //  Copyright © 2019 Yeamern Chuan. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class ExpiryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,36 +24,12 @@ class HomeTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if (section == 0 || section == 2) {
-            return 3
-        } else {
-            return 2
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.section == 3) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "bmiSegue", sender: self)
-            }
-        } else if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "timerSegue", sender: self)
-            } else if (indexPath.row == 2) {
-                performSegue(withIdentifier: "microwaveSegue", sender: self)
-            }
-        } else if (indexPath.section == 1) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "shoppingListSegue", sender: self)
-            } else {
-                performSegue(withIdentifier: "expirySegue", sender: self)
-            }
-        }
+        return 0
     }
 
     /*

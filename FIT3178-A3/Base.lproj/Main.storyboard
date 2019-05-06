@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="-166"/>
+            <point key="canvasLocation" x="182" y="-428"/>
         </scene>
         <!--Microwave Converter-->
         <scene sceneID="PsA-4n-hbN">
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2D-Vj-VZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="491"/>
+            <point key="canvasLocation" x="927" y="-429"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="Cow-4Q-p96">
@@ -411,11 +411,114 @@
                         <segue destination="vmS-5m-gq7" kind="show" identifier="microwaveSegue" id="rTx-iE-K5Z"/>
                         <segue destination="wxQ-Rx-RcO" kind="show" identifier="timerSegue" id="24c-Vp-Ko3"/>
                         <segue destination="xht-Qu-TDq" kind="show" identifier="shoppingListSegue" id="AQD-b9-ojw"/>
+                        <segue destination="8ft-DX-Bi3" kind="show" identifier="expirySegue" id="C5T-a6-6CK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfX-bP-S4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="182" y="265"/>
+        </scene>
+        <!--Ingredients & Expiry-->
+        <scene sceneID="U2A-gU-vJf">
+            <objects>
+                <tableViewController id="8ft-DX-Bi3" customClass="ExpiryTableViewController" customModule="FIT3178_A3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="oyB-ic-RYt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Yc-ka-gtw">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yc-ka-gtw" id="UKh-MN-JE9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8ft-DX-Bi3" id="FoJ-AP-XJd"/>
+                            <outlet property="delegate" destination="8ft-DX-Bi3" id="me4-l5-eOo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ingredients &amp; Expiry" id="j0U-eH-rdS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m3Y-7Z-64X">
+                            <connections>
+                                <segue destination="4GU-6y-kL4" kind="show" identifier="addExpirySegue" id="nwX-B2-NGs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJv-Mx-PSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="269"/>
+        </scene>
+        <!--Add Item & Expiry-->
+        <scene sceneID="LGh-2D-iRQ">
+            <objects>
+                <viewController id="4GU-6y-kL4" customClass="AddExpiryViewController" customModule="FIT3178_A3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QCL-ju-jt9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSE-tQ-Yp0">
+                                <rect key="frame" x="16" y="80" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gps-4a-e6j">
+                                <rect key="frame" x="16" y="163" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jXq-ZL-2WD">
+                                <rect key="frame" x="16" y="117" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2U-UT-Y7U">
+                                <rect key="frame" x="172.5" y="573" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addExpiry:" destination="4GU-6y-kL4" eventType="touchUpInside" id="WDa-JX-tHG"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yEa-iX-jB7">
+                                <rect key="frame" x="0.0" y="200" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="578818216.29731297">
+                                    <!--2019-05-06 06:50:16 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jXq-ZL-2WD" firstAttribute="leading" secondItem="vX1-gf-vxd" secondAttribute="leading" constant="16" id="BKI-gd-iu8"/>
+                            <constraint firstItem="RSE-tQ-Yp0" firstAttribute="leading" secondItem="vX1-gf-vxd" secondAttribute="leading" constant="16" id="BxD-Qr-C53"/>
+                            <constraint firstItem="gps-4a-e6j" firstAttribute="top" secondItem="jXq-ZL-2WD" secondAttribute="bottom" constant="16" id="FgV-FQ-knf"/>
+                            <constraint firstItem="vX1-gf-vxd" firstAttribute="trailing" secondItem="jXq-ZL-2WD" secondAttribute="trailing" constant="16" id="HpW-IG-aYa"/>
+                            <constraint firstItem="D2U-UT-Y7U" firstAttribute="centerX" secondItem="QCL-ju-jt9" secondAttribute="centerX" id="Oa3-7x-8xW"/>
+                            <constraint firstItem="RSE-tQ-Yp0" firstAttribute="top" secondItem="vX1-gf-vxd" secondAttribute="top" constant="16" id="U4k-Wb-Njg"/>
+                            <constraint firstItem="gps-4a-e6j" firstAttribute="leading" secondItem="vX1-gf-vxd" secondAttribute="leading" constant="16" id="WYZ-8K-bQZ"/>
+                            <constraint firstItem="yEa-iX-jB7" firstAttribute="leading" secondItem="vX1-gf-vxd" secondAttribute="leading" id="Y3e-k1-OvA"/>
+                            <constraint firstItem="jXq-ZL-2WD" firstAttribute="top" secondItem="RSE-tQ-Yp0" secondAttribute="bottom" constant="16" id="jsq-ma-dhd"/>
+                            <constraint firstItem="vX1-gf-vxd" firstAttribute="bottom" secondItem="D2U-UT-Y7U" secondAttribute="bottom" constant="64" id="m4A-h5-ycS"/>
+                            <constraint firstItem="yEa-iX-jB7" firstAttribute="top" secondItem="gps-4a-e6j" secondAttribute="bottom" constant="16" id="sHs-hb-gBO"/>
+                            <constraint firstItem="yEa-iX-jB7" firstAttribute="trailing" secondItem="vX1-gf-vxd" secondAttribute="trailing" id="tPc-Z0-sCn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vX1-gf-vxd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Item &amp; Expiry" id="MPC-Jd-Tcb"/>
+                    <connections>
+                        <outlet property="dateField" destination="yEa-iX-jB7" id="utJ-ql-Pqj"/>
+                        <outlet property="itemField" destination="jXq-ZL-2WD" id="AxA-14-ms7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btp-Qp-B4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656.8" y="264.91754122938534"/>
         </scene>
         <!--Timer-->
         <scene sceneID="E1S-27-gLr">
