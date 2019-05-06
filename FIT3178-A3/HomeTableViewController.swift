@@ -47,6 +47,10 @@ class HomeTableViewController: UITableViewController {
             } else if (indexPath.row == 2) {
                 performSegue(withIdentifier: "microwaveSegue", sender: self)
             }
+        } else if (indexPath.section == 1) {
+            if (indexPath.row == 0) {
+                performSegue(withIdentifier: "shoppingListSegue", sender: self)
+            }
         }
     }
 
