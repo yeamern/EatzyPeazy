@@ -10,12 +10,14 @@ import UIKit
 
 class ShoppingListTableViewController: UITableViewController, DatabaseListener {
     func onListChange(change: DatabaseChange, items: [Item]) {
+        shoppingList = items
+        tableView.reloadData()
     }
     
     
     let CELL_ITEM = "itemCell"
     
-    var shoppingList: [ShoppingItem] = []
+    var shoppingList: [Item] = []
     
     weak var databaseController: DatabaseProtocol?
     
@@ -60,7 +62,7 @@ class ShoppingListTableViewController: UITableViewController, DatabaseListener {
         let itemCell = tableView.dequeueReusableCell(withIdentifier: CELL_ITEM, for: indexPath)
         let item = shoppingList[indexPath.row]
         
-        itemCell.textLabel?.text = item.item
+        itemCell.textLabel?.text = item.name
 
         return itemCell
     }
@@ -71,8 +73,9 @@ class ShoppingListTableViewController: UITableViewController, DatabaseListener {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.shoppingList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            databaseController?.deleteItem(item: shoppingList[indexPath.row])
+            // self.shoppingList.remove(at: indexPath.row)
+            // tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     

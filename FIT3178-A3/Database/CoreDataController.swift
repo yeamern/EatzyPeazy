@@ -21,7 +21,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     
     // Initialize the database
     override init() {
-        persistantContainer = NSPersistentContainer(name: "Item")
+        persistantContainer = NSPersistentContainer(name: "ShoppingList")
         persistantContainer.loadPersistentStores { (description, error) in
             if let error = error {
                 fatalError("Failed to load Core Data stack: \(error)")
@@ -71,6 +71,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     func fetchItems() -> [Item] {
         if itemFetchedResultsController == nil {
             let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+            let itemSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [itemSortDescriptor]
             itemFetchedResultsController = NSFetchedResultsController<Item>(fetchRequest: fetchRequest, managedObjectContext: persistantContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
             itemFetchedResultsController?.delegate = self
             
