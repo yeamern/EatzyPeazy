@@ -11,19 +11,13 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate {
-    func addExpiry(name: String, date: Date) -> Expiry {
-        let item = NSEntityDescription.insertNewObject(forEntityName: "Expiry", into: persistantContainer.viewContext) as! Expiry
-        item.name = name
-        item.date = date as NSDate
-        saveContext()
-        return item
-    }
     
     var listeners = MulticastDelegate<DatabaseListener>()
     var persistantContainer: NSPersistentContainer
     
     // Results
     var itemFetchedResultsController: NSFetchedResultsController<Item>?
+    var expiryFetchedResultsController: NSFetchedResultsController<Expiry>?
     
     
     // Initialize the database
@@ -61,9 +55,10 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         saveContext()
     }
     
-    func addExpiry(name: String) -> Expiry {
+    func addExpiry(name: String, date: Date) -> Expiry {
         let expiry = NSEntityDescription.insertNewObject(forEntityName: "Expiry", into: persistantContainer.viewContext) as! Expiry
         expiry.name = name
+        expiry.date = date as NSDate
         saveContext()
         return expiry
     }
@@ -80,6 +75,9 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         listeners.addDelegate(listener)
         if listener.listenerType == ListenerType.item {
             listener.onListChange(change: DatabaseChange.add, items: fetchItems())
+        }
+        if listener.listenerType == ListenerType.expiry {
+            listener.onExpiryChange(change: DatabaseChange.add, items: fetchExpiry())
         }
     }
     
@@ -110,6 +108,29 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         return items
     }
     
+    // Fetch the tasks from core data database
+    func fetchExpiry() -> [Expiry] {
+        if expiryFetchedResultsController == nil {
+            let fetchRequest: NSFetchRequest<Expiry> = Expiry.fetchRequest()
+            let expirySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            fetchRequest.sortDescriptors = [expirySortDescriptor]
+            expiryFetchedResultsController = NSFetchedResultsController<Expiry>(fetchRequest: fetchRequest, managedObjectContext: persistantContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            expiryFetchedResultsController?.delegate = self
+            
+            do {
+                try expiryFetchedResultsController?.performFetch()
+            } catch {
+                print("Fetch request failed: \(error)")
+            }
+        }
+        var expiry = [Expiry]()
+        if expiryFetchedResultsController?.fetchedObjects != nil {
+            expiry = (expiryFetchedResultsController?.fetchedObjects)!
+        }
+        return expiry
+    }
+    
+    
     // MARK: -Fetched Results Controller Delegate
     
     // Notifies listeners with changes
@@ -118,6 +139,9 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             listeners.invoke { (listener) in
                 if listener.listenerType == ListenerType.item {
                     listener.onListChange(change: DatabaseChange.add, items:fetchItems())
+                }
+                if listener.listenerType == ListenerType.expiry {
+                    listener.onExpiryChange(change: DatabaseChange.add, items: fetchExpiry())
                 }
             }
         }

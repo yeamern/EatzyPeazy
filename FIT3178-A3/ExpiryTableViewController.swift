@@ -81,8 +81,8 @@ class ExpiryTableViewController: UITableViewController, DatabaseListener {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             databaseController?.deleteExpiry(item: expiryList[indexPath.row])
-            // self.shoppingList.remove(at: indexPath.row)
-            // tableView.deleteRows(at: [indexPath], with: .fade)
+             self.expiryList.remove(at: indexPath.row)
+             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
