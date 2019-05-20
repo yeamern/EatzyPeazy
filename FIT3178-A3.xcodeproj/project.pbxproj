@@ -21,12 +21,15 @@
 		BFF01F56227FF47D0080AAFF /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF01F54227FF47D0080AAFF /* Item+CoreDataClass.swift */; };
 		BFF01F57227FF47D0080AAFF /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF01F55227FF47D0080AAFF /* Item+CoreDataProperties.swift */; };
 		ED1BB1DF22781F7200FE2120 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1BB1DE22781F7200FE2120 /* HomeTableViewController.swift */; };
+		ED2DC32A229277FC0082BDBC /* Expiry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DC328229277FB0082BDBC /* Expiry+CoreDataClass.swift */; };
+		ED2DC32B229277FC0082BDBC /* Expiry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DC329229277FB0082BDBC /* Expiry+CoreDataProperties.swift */; };
 		ED931D6422783540006C9758 /* MicrowaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED931D6322783540006C9758 /* MicrowaveViewController.swift */; };
 		EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE40E2276C06F005F0050 /* AppDelegate.swift */; };
 		EDABE4112276C06F005F0050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE4102276C06F005F0050 /* ViewController.swift */; };
 		EDABE4142276C06F005F0050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABE4122276C06F005F0050 /* Main.storyboard */; };
 		EDABE4162276C070005F0050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDABE4152276C070005F0050 /* Assets.xcassets */; };
 		EDABE4192276C070005F0050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABE4172276C070005F0050 /* LaunchScreen.storyboard */; };
+		EDCD119F22929F5A00243D99 /* ExpiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD119E22929F5A00243D99 /* ExpiryTableViewCell.swift */; };
 		EDF4D2742280087400C58DD8 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4D2732280087400C58DD8 /* FirebaseController.swift */; };
 		EDF4D2762280101300C58DD8 /* ExpiryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4D2752280101300C58DD8 /* ExpiryTableViewController.swift */; };
 		EDF4D2782280104D00C58DD8 /* AddExpiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4D2772280104D00C58DD8 /* AddExpiryViewController.swift */; };
@@ -47,6 +50,8 @@
 		BFF01F54227FF47D0080AAFF /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BFF01F55227FF47D0080AAFF /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED1BB1DE22781F7200FE2120 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		ED2DC328229277FB0082BDBC /* Expiry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expiry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ED2DC329229277FB0082BDBC /* Expiry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expiry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ED931D6322783540006C9758 /* MicrowaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrowaveViewController.swift; sourceTree = "<group>"; };
 		EDABE40B2276C06F005F0050 /* FIT3178-A3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-A3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABE40E2276C06F005F0050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		EDABE4152276C070005F0050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDABE4182276C070005F0050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDABE41A2276C070005F0050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCD119E22929F5A00243D99 /* ExpiryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryTableViewCell.swift; sourceTree = "<group>"; };
 		EDF4D2732280087400C58DD8 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		EDF4D2752280101300C58DD8 /* ExpiryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryTableViewController.swift; sourceTree = "<group>"; };
 		EDF4D2772280104D00C58DD8 /* AddExpiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpiryViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				BFF01F44227FEE440080AAFF /* ShoppingList.xcdatamodeld */,
+				ED2DC328229277FB0082BDBC /* Expiry+CoreDataClass.swift */,
+				ED2DC329229277FB0082BDBC /* Expiry+CoreDataProperties.swift */,
+				BFF01F54227FF47D0080AAFF /* Item+CoreDataClass.swift */,
+				BFF01F55227FF47D0080AAFF /* Item+CoreDataProperties.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -92,8 +102,6 @@
 		EDABE4022276C06F005F0050 = {
 			isa = PBXGroup;
 			children = (
-				BFF01F54227FF47D0080AAFF /* Item+CoreDataClass.swift */,
-				BFF01F55227FF47D0080AAFF /* Item+CoreDataProperties.swift */,
 				EDABE40D2276C06F005F0050 /* FIT3178-A3 */,
 				EDABE40C2276C06F005F0050 /* Products */,
 			);
@@ -130,6 +138,7 @@
 				EDF4D2732280087400C58DD8 /* FirebaseController.swift */,
 				EDF4D2752280101300C58DD8 /* ExpiryTableViewController.swift */,
 				EDF4D2772280104D00C58DD8 /* AddExpiryViewController.swift */,
+				EDCD119E22929F5A00243D99 /* ExpiryTableViewCell.swift */,
 			);
 			path = "FIT3178-A3";
 			sourceTree = "<group>";
@@ -212,6 +221,8 @@
 				BFF01F57227FF47D0080AAFF /* Item+CoreDataProperties.swift in Sources */,
 				ED1BB1DF22781F7200FE2120 /* HomeTableViewController.swift in Sources */,
 				BFF01F51227FF1200080AAFF /* CoreDataController.swift in Sources */,
+				EDCD119F22929F5A00243D99 /* ExpiryTableViewCell.swift in Sources */,
+				ED2DC32A229277FC0082BDBC /* Expiry+CoreDataClass.swift in Sources */,
 				BFF01F53227FF1E60080AAFF /* MulticastDelegate.swift in Sources */,
 				BFE302E3227EE208005EBAAB /* ShoppingListTableViewController.swift in Sources */,
 				EDABE4112276C06F005F0050 /* ViewController.swift in Sources */,
@@ -219,6 +230,7 @@
 				BFF01F4F227FEF590080AAFF /* DatabaseProtocol.swift in Sources */,
 				BFE302E5227EE4D9005EBAAB /* AddItemViewController.swift in Sources */,
 				EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */,
+				ED2DC32B229277FC0082BDBC /* Expiry+CoreDataProperties.swift in Sources */,
 				BFF01F3F227FD92B0080AAFF /* AddItemDelegate.swift in Sources */,
 				BF971BA4227C9A0700647B48 /* TimerViewController.swift in Sources */,
 				BFF01F46227FEE440080AAFF /* ShoppingList.xcdatamodeld in Sources */,
@@ -371,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5ZLRMDUT7;
 				INFOPLIST_FILE = "FIT3178-A3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,6 +401,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5ZLRMDUT7;
 				INFOPLIST_FILE = "FIT3178-A3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

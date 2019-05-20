@@ -422,18 +422,43 @@
         <scene sceneID="U2A-gU-vJf">
             <objects>
                 <tableViewController id="8ft-DX-Bi3" customClass="ExpiryTableViewController" customModule="FIT3178_A3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="oyB-ic-RYt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oyB-ic-RYt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Yc-ka-gtw">
-                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" id="4Yc-ka-gtw" customClass="ExpiryTableViewCell" customModule="FIT3178_A3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yc-ka-gtw" id="UKh-MN-JE9">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yc-ka-gtw" id="UKh-MN-JE9" customClass="ExpiryTableViewCell" customModule="FIT3178_A3" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vE9-sK-5cJ">
+                                            <rect key="frame" x="16" y="1" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS4-ar-5TB">
+                                            <rect key="frame" x="16" y="23" width="27" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vE9-sK-5cJ" firstAttribute="leading" secondItem="UKh-MN-JE9" secondAttribute="leading" constant="16" id="3ce-Sp-LlV"/>
+                                        <constraint firstItem="yS4-ar-5TB" firstAttribute="top" secondItem="vE9-sK-5cJ" secondAttribute="bottom" constant="1" id="63e-ea-lbL"/>
+                                        <constraint firstItem="yS4-ar-5TB" firstAttribute="top" secondItem="vE9-sK-5cJ" secondAttribute="bottom" constant="1" id="K7E-SJ-ogt"/>
+                                        <constraint firstItem="vE9-sK-5cJ" firstAttribute="top" secondItem="UKh-MN-JE9" secondAttribute="top" constant="1" id="N7P-Cu-LeS"/>
+                                        <constraint firstItem="yS4-ar-5TB" firstAttribute="leading" secondItem="UKh-MN-JE9" secondAttribute="leading" constant="16" id="Pc5-MW-nvE"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="yS4-ar-5TB" id="OJY-Ut-Cbr"/>
+                                    <outlet property="itemLabel" destination="vE9-sK-5cJ" id="0yg-Q9-jlp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -479,13 +504,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2U-UT-Y7U">
-                                <rect key="frame" x="172.5" y="573" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="addExpiry:" destination="4GU-6y-kL4" eventType="touchUpInside" id="WDa-JX-tHG"/>
-                                </connections>
-                            </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yEa-iX-jB7">
                                 <rect key="frame" x="0.0" y="200" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="578818216.29731297">
@@ -499,18 +517,22 @@
                             <constraint firstItem="RSE-tQ-Yp0" firstAttribute="leading" secondItem="vX1-gf-vxd" secondAttribute="leading" constant="16" id="BxD-Qr-C53"/>
                             <constraint firstItem="gps-4a-e6j" firstAttribute="top" secondItem="jXq-ZL-2WD" secondAttribute="bottom" constant="16" id="FgV-FQ-knf"/>
                             <constraint firstItem="vX1-gf-vxd" firstAttribute="trailing" secondItem="jXq-ZL-2WD" secondAttribute="trailing" constant="16" id="HpW-IG-aYa"/>
-                            <constraint firstItem="D2U-UT-Y7U" firstAttribute="centerX" secondItem="QCL-ju-jt9" secondAttribute="centerX" id="Oa3-7x-8xW"/>
                             <constraint firstItem="RSE-tQ-Yp0" firstAttribute="top" secondItem="vX1-gf-vxd" secondAttribute="top" constant="16" id="U4k-Wb-Njg"/>
                             <constraint firstItem="gps-4a-e6j" firstAttribute="leading" secondItem="vX1-gf-vxd" secondAttribute="leading" constant="16" id="WYZ-8K-bQZ"/>
                             <constraint firstItem="yEa-iX-jB7" firstAttribute="leading" secondItem="vX1-gf-vxd" secondAttribute="leading" id="Y3e-k1-OvA"/>
                             <constraint firstItem="jXq-ZL-2WD" firstAttribute="top" secondItem="RSE-tQ-Yp0" secondAttribute="bottom" constant="16" id="jsq-ma-dhd"/>
-                            <constraint firstItem="vX1-gf-vxd" firstAttribute="bottom" secondItem="D2U-UT-Y7U" secondAttribute="bottom" constant="64" id="m4A-h5-ycS"/>
                             <constraint firstItem="yEa-iX-jB7" firstAttribute="top" secondItem="gps-4a-e6j" secondAttribute="bottom" constant="16" id="sHs-hb-gBO"/>
                             <constraint firstItem="yEa-iX-jB7" firstAttribute="trailing" secondItem="vX1-gf-vxd" secondAttribute="trailing" id="tPc-Z0-sCn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vX1-gf-vxd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Item &amp; Expiry" id="MPC-Jd-Tcb"/>
+                    <navigationItem key="navigationItem" title="Add Item &amp; Expiry" id="MPC-Jd-Tcb">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="EX8-fD-5pR">
+                            <connections>
+                                <action selector="addExpiry:" destination="4GU-6y-kL4" id="tm2-lL-ZEk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateField" destination="yEa-iX-jB7" id="utJ-ql-Pqj"/>
                         <outlet property="itemField" destination="jXq-ZL-2WD" id="AxA-14-ms7"/>
@@ -632,7 +654,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpJ-iv-Sp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-382" y="1155"/>
+            <point key="canvasLocation" x="-634" y="1031"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="yta-Rh-9Pe">
@@ -667,7 +689,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t30-jX-soh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="1155"/>
+            <point key="canvasLocation" x="182" y="1032"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="OD7-Wm-ehv">
@@ -689,34 +711,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1A-hI-5FR">
-                                <rect key="frame" x="172.5" y="573" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="add:" destination="3db-7V-0Fv" eventType="touchUpInside" id="Hs6-pM-cPf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kGJ-ZQ-8MK" firstAttribute="bottom" secondItem="t1A-hI-5FR" secondAttribute="bottom" constant="64" id="CJE-0t-qkP"/>
                             <constraint firstItem="Tqj-Fq-HnC" firstAttribute="leading" secondItem="kGJ-ZQ-8MK" secondAttribute="leading" constant="16" id="Ffr-hH-aMs"/>
                             <constraint firstItem="iW3-vC-77a" firstAttribute="top" secondItem="kGJ-ZQ-8MK" secondAttribute="top" constant="16" id="Tjv-Zv-YIi"/>
                             <constraint firstItem="kGJ-ZQ-8MK" firstAttribute="trailing" secondItem="Tqj-Fq-HnC" secondAttribute="trailing" constant="16" id="bH3-gY-51T"/>
                             <constraint firstItem="Tqj-Fq-HnC" firstAttribute="top" secondItem="iW3-vC-77a" secondAttribute="bottom" constant="16" id="jy3-O6-HF8"/>
                             <constraint firstItem="iW3-vC-77a" firstAttribute="leading" secondItem="kGJ-ZQ-8MK" secondAttribute="leading" constant="16" id="uuK-Hb-43l"/>
-                            <constraint firstItem="t1A-hI-5FR" firstAttribute="centerX" secondItem="0aj-HX-5of" secondAttribute="centerX" id="vpU-HR-Cem"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kGJ-ZQ-8MK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Item" id="BZW-xh-vJ9"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="BZW-xh-vJ9">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="P5G-b9-cAh">
+                            <connections>
+                                <action selector="add:" destination="3db-7V-0Fv" id="r0v-9K-nQI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="itemField" destination="Tqj-Fq-HnC" id="2JQ-99-wdg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CU3-ZQ-QMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="1156"/>
+            <point key="canvasLocation" x="926" y="1031"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="d6c-oZ-TcL">

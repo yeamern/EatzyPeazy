@@ -10,18 +10,67 @@ import UIKit
 
 class AddExpiryViewController: UIViewController {
 
+    var expiry: Expiry?
+    weak var databaseController: DatabaseProtocol?
+    
     @IBOutlet weak var itemField: UITextField!
     @IBOutlet weak var dateField: UIDatePicker!
-    
+
     @IBAction func addExpiry(_ sender: Any) {
+        
+        let item = itemField.text!
+        
+        // Item must not be empty
+        guard item != "" else {
+            displayMessage(title: "Error", msg: "Enter an item")
+            return
+        }
+        
+        // Date must not be in the past
+        if dateField.date < Date() {
+            displayMessage(title: "Error", msg: "Please enter a valid date")
+            return
+        }
+        
+        if itemField.text != "" {
+            
+            let _ = databaseController!.addExpiry(name: item, date: dateField.date)
+            navigationController?.popViewController(animated: true)
+            displayMessagePop(title: "Saved", msg: "Item and expiry added")
+        }
+        
+        // ADD TASK not done
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Get the databse controller once form the App Delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databaseController = appDelegate.databaseController
+        
+        // Show the details of the item
+        if expiry != nil {
+            itemField.text = expiry!.name!
+            dateField.date = expiry!.date! as Date
+        }
     }
     
+    // Display a message and pop back to the previous view
+    func displayMessagePop(title: String, msg: String) {
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: { (_) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // Display a message
+    func displayMessage(title: String, msg: String) {
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

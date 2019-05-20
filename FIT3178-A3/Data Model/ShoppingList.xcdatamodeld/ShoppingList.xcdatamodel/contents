@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Expiry" representedClassName="Expiry" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bought" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expiry" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Item" positionX="-54" positionY="-9" width="128" height="60"/>
+        <element name="Expiry" positionX="-54" positionY="0" width="128" height="75"/>
+        <element name="Item" positionX="-54" positionY="-9" width="128" height="75"/>
     </elements>
 </model>

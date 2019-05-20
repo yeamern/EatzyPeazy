@@ -9,11 +9,13 @@
 import UIKit
 
 class ShoppingListTableViewController: UITableViewController, DatabaseListener {
+    func onExpiryChange(change: DatabaseChange, items: [Expiry]) {
+    }
+
     func onListChange(change: DatabaseChange, items: [Item]) {
         shoppingList = items
         tableView.reloadData()
     }
-    
     
     let CELL_ITEM = "itemCell"
     

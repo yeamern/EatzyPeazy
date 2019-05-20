@@ -162,26 +162,7 @@ class TimerViewController: UIViewController {
         if hourField.text?.count == 1 {
             hourField.text = "0\(hourField.text!)"
         }
-        
-        /*
-        if seconds < 1 {
-            timer.invalidate()
-            // SEND ALERT
-        } else {
-            seconds -= 1
-         
-        }
-        */
     }
-    
-    // take integer and return a string with formatted time
-//    func timeString(time:TimeInterval) -> String {
-//        let hours = Int(time) / 3600
-//        let minutes = Int(time) / 60 % 60
-//        let seconds = Int(time) % 60
-//
-//        return String(format:"%02i : %02i : %02i", hours, minutes, seconds)
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,13 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsControllerDelegate {
+    func addExpiry(name: String, date: Date) -> Expiry {
+        let item = NSEntityDescription.insertNewObject(forEntityName: "Expiry", into: persistantContainer.viewContext) as! Expiry
+        item.name = name
+        item.date = date as NSDate
+        saveContext()
+        return item
+    }
     
     var listeners = MulticastDelegate<DatabaseListener>()
     var persistantContainer: NSPersistentContainer
@@ -53,6 +60,20 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         persistantContainer.viewContext.delete(item)
         saveContext()
     }
+    
+    func addExpiry(name: String) -> Expiry {
+        let expiry = NSEntityDescription.insertNewObject(forEntityName: "Expiry", into: persistantContainer.viewContext) as! Expiry
+        expiry.name = name
+        saveContext()
+        return expiry
+    }
+    
+    func deleteExpiry(item: Expiry) {
+        persistantContainer.viewContext.delete(item)
+        saveContext()
+    }
+    
+
     
     // Add the given listener to the list of listeners
     func addListener(listener: DatabaseListener) {

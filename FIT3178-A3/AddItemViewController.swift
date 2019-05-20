@@ -13,7 +13,7 @@ class AddItemViewController: UIViewController {
     weak var databaseController: DatabaseProtocol?
     
     @IBOutlet weak var itemField: UITextField!
-    
+
     @IBAction func add(_ sender: Any) {
         if itemField.text != "" {
             let item = itemField.text!

@@ -15,16 +15,20 @@ enum DatabaseChange {
 
 enum ListenerType {
     case item
+    case expiry
 }
 
 protocol DatabaseListener: AnyObject {
     var listenerType: ListenerType {get set}
     func onListChange(change: DatabaseChange, items: [Item])
+    func onExpiryChange(change: DatabaseChange, items: [Expiry])
 }
 
 protocol DatabaseProtocol: AnyObject {
     func addItem(name: String) -> Item
     func deleteItem(item: Item)
+    func addExpiry(name: String, date: Date) -> Expiry
+    func deleteExpiry(item: Expiry)
     func addListener(listener: DatabaseListener)
     func removeListener(listener: DatabaseListener)
 }
