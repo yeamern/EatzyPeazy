@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xnI-Ap-ZGf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xnI-Ap-ZGf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -430,7 +430,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" id="4Yc-ka-gtw" customClass="ExpiryTableViewCell" customModule="FIT3178_A3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yc-ka-gtw" id="UKh-MN-JE9" customClass="ExpiryTableViewCell" customModule="FIT3178_A3" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yc-ka-gtw" id="UKh-MN-JE9">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -441,17 +441,18 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS4-ar-5TB">
-                                            <rect key="frame" x="16" y="25" width="27" height="14.5"/>
+                                            <rect key="frame" x="16" y="23" width="343" height="14.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vE9-sK-5cJ" firstAttribute="leading" secondItem="UKh-MN-JE9" secondAttribute="leading" constant="16" id="JlH-e2-q19"/>
-                                        <constraint firstItem="yS4-ar-5TB" firstAttribute="top" secondItem="vE9-sK-5cJ" secondAttribute="bottom" constant="2" id="QgD-DK-H5X"/>
-                                        <constraint firstItem="yS4-ar-5TB" firstAttribute="leading" secondItem="UKh-MN-JE9" secondAttribute="leading" constant="16" id="YsJ-Jq-n7O"/>
-                                        <constraint firstItem="vE9-sK-5cJ" firstAttribute="top" secondItem="UKh-MN-JE9" secondAttribute="top" constant="2" id="roh-Lg-Av6"/>
+                                        <constraint firstAttribute="trailing" secondItem="yS4-ar-5TB" secondAttribute="trailing" constant="16" id="Xqn-6t-eRJ"/>
+                                        <constraint firstItem="yS4-ar-5TB" firstAttribute="leading" secondItem="UKh-MN-JE9" secondAttribute="leading" constant="16" id="g3i-sS-d7N"/>
+                                        <constraint firstItem="yS4-ar-5TB" firstAttribute="top" secondItem="vE9-sK-5cJ" secondAttribute="bottom" id="gYU-WW-q1d"/>
+                                        <constraint firstItem="vE9-sK-5cJ" firstAttribute="leading" secondItem="UKh-MN-JE9" secondAttribute="leading" constant="16" id="hbo-TH-SKe"/>
+                                        <constraint firstItem="vE9-sK-5cJ" firstAttribute="top" secondItem="UKh-MN-JE9" secondAttribute="top" constant="2" id="nhb-36-0nf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -475,7 +476,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJv-Mx-PSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="269"/>
+            <point key="canvasLocation" x="926" y="265"/>
         </scene>
         <!--Add Item & Expiry-->
         <scene sceneID="LGh-2D-iRQ">
@@ -539,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btp-Qp-B4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656.8" y="264.91754122938534"/>
+            <point key="canvasLocation" x="1620" y="265"/>
         </scene>
         <!--Timer-->
         <scene sceneID="E1S-27-gLr">
