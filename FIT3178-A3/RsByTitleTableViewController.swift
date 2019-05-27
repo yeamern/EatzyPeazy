@@ -1,61 +1,84 @@
 //
-//  HomeTableViewController.swift
+//  RsByTitleTableViewController.swift
 //  FIT3178-A3
 //
-//  Created by Yeamern Chuan on 30/4/19.
+//  Created by Chuan Yeamern on 27/05/2019.
 //  Copyright © 2019 Yeamern Chuan. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
 
+    let RECIPE_CELL = "recipeCell"
+    var indicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "recipe title"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        
+        indicator.style = UIActivityIndicatorView.Style.gray
+        indicator.center = self.tableView.center
+        self.view.addSubview(indicator)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text, searchText.count > 0 else {
+            return;
+        }
+        
+        indicator.startAnimating()
+        indicator.backgroundColor = UIColor.white
+        
+        let searchString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes//search?query=pizza"
+        let jsonURL = URL(string: searchString.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!)
+        let recipe = URLSession.shared.dataTask(with: jsonURL!) {
+            (data, response, error) in
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
+            }
+            if let error = error {
+                self.displayMessage(title: "Error", msg: error.localizedDescription)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let 
+            }
+        }
+    }
+    
+    func displayMessage(title: String, msg: String) {
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if (section == 0 || section == 2) {
-            return 3
-        } else {
-            return 2
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.section == 3) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "bmiSegue", sender: self)
-            }
-        } else if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "timerSegue", sender: self)
-            } else if (indexPath.row == 1) {
-                performSegue(withIdentifier: "unitSegue", sender: self)
-            } else if (indexPath.row == 2) {
-                performSegue(withIdentifier: "microwaveSegue", sender: self)
-            }
-        } else if (indexPath.section == 1) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "shoppingListSegue", sender: self)
-            } else {
-                performSegue(withIdentifier: "expirySegue", sender: self)
-            }
-        }
+        return 0
     }
 
     /*
