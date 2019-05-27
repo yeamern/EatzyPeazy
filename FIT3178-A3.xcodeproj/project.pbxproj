@@ -26,6 +26,10 @@
 		ED1BB1DF22781F7200FE2120 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1BB1DE22781F7200FE2120 /* HomeTableViewController.swift */; };
 		ED2DC32A229277FC0082BDBC /* Expiry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DC328229277FB0082BDBC /* Expiry+CoreDataClass.swift */; };
 		ED2DC32B229277FC0082BDBC /* Expiry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DC329229277FB0082BDBC /* Expiry+CoreDataProperties.swift */; };
+		ED7AD4E7229BB07000E19BEA /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7AD4E6229BB07000E19BEA /* RecipeData.swift */; };
+		ED7AD4E9229BB1F100E19BEA /* ResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7AD4E8229BB1F100E19BEA /* ResultsData.swift */; };
+		ED7AD4ED229BC42E00E19BEA /* RsByIngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7AD4EC229BC42E00E19BEA /* RsByIngredientsTableViewController.swift */; };
+		ED7AD4F1229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7AD4F0229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift */; };
 		ED931D6422783540006C9758 /* MicrowaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED931D6322783540006C9758 /* MicrowaveViewController.swift */; };
 		EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE40E2276C06F005F0050 /* AppDelegate.swift */; };
 		EDABE4112276C06F005F0050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE4102276C06F005F0050 /* ViewController.swift */; };
@@ -58,6 +62,10 @@
 		ED1BB1DE22781F7200FE2120 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		ED2DC328229277FB0082BDBC /* Expiry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expiry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ED2DC329229277FB0082BDBC /* Expiry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expiry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ED7AD4E6229BB07000E19BEA /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
+		ED7AD4E8229BB1F100E19BEA /* ResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsData.swift; sourceTree = "<group>"; };
+		ED7AD4EC229BC42E00E19BEA /* RsByIngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsByIngredientsTableViewController.swift; sourceTree = "<group>"; };
+		ED7AD4F0229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsIngrAvailableTableViewController.swift; sourceTree = "<group>"; };
 		ED931D6322783540006C9758 /* MicrowaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrowaveViewController.swift; sourceTree = "<group>"; };
 		EDABE40B2276C06F005F0050 /* FIT3178-A3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-A3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABE40E2276C06F005F0050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +156,10 @@
 				BF7FC78D229AE9F100453A5B /* UnitsViewController.swift */,
 				BF7FC78F229B0B8C00453A5B /* UnitsData.swift */,
 				BF7FC795229B699200453A5B /* RsByTitleTableViewController.swift */,
+				ED7AD4EC229BC42E00E19BEA /* RsByIngredientsTableViewController.swift */,
+				ED7AD4E6229BB07000E19BEA /* RecipeData.swift */,
+				ED7AD4E8229BB1F100E19BEA /* ResultsData.swift */,
+				ED7AD4F0229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift */,
 			);
 			path = "FIT3178-A3";
 			sourceTree = "<group>";
@@ -227,6 +239,7 @@
 				BFF01F56227FF47D0080AAFF /* Item+CoreDataClass.swift in Sources */,
 				BFE302DF227E63AC005EBAAB /* textFieldLimit.swift in Sources */,
 				EDF4D2762280101300C58DD8 /* ExpiryTableViewController.swift in Sources */,
+				ED7AD4E7229BB07000E19BEA /* RecipeData.swift in Sources */,
 				BFF01F57227FF47D0080AAFF /* Item+CoreDataProperties.swift in Sources */,
 				ED1BB1DF22781F7200FE2120 /* HomeTableViewController.swift in Sources */,
 				BFF01F51227FF1200080AAFF /* CoreDataController.swift in Sources */,
@@ -236,14 +249,17 @@
 				BFE302E3227EE208005EBAAB /* ShoppingListTableViewController.swift in Sources */,
 				EDABE4112276C06F005F0050 /* ViewController.swift in Sources */,
 				EDF4D2742280087400C58DD8 /* FirebaseController.swift in Sources */,
+				ED7AD4E9229BB1F100E19BEA /* ResultsData.swift in Sources */,
 				BFF01F4F227FEF590080AAFF /* DatabaseProtocol.swift in Sources */,
 				BFE302E5227EE4D9005EBAAB /* AddItemViewController.swift in Sources */,
+				ED7AD4F1229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift in Sources */,
 				BF7FC796229B699200453A5B /* RsByTitleTableViewController.swift in Sources */,
 				EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */,
 				BF7FC790229B0B8C00453A5B /* UnitsData.swift in Sources */,
 				BF7FC78E229AE9F100453A5B /* UnitsViewController.swift in Sources */,
 				ED2DC32B229277FC0082BDBC /* Expiry+CoreDataProperties.swift in Sources */,
 				BFF01F3F227FD92B0080AAFF /* AddItemDelegate.swift in Sources */,
+				ED7AD4ED229BC42E00E19BEA /* RsByIngredientsTableViewController.swift in Sources */,
 				BF971BA4227C9A0700647B48 /* TimerViewController.swift in Sources */,
 				BFF01F46227FEE440080AAFF /* ShoppingList.xcdatamodeld in Sources */,
 				BFF01F42227FDB270080AAFF /* ShoppingItem.swift in Sources */,

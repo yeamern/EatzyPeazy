@@ -12,6 +12,7 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
 
     let RECIPE_CELL = "recipeCell"
     var indicator = UIActivityIndicatorView()
+    var newRecipes = [RecipeData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +44,13 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
         indicator.startAnimating()
         indicator.backgroundColor = UIColor.white
         
-        let searchString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes//search?query=pizza"
-        let jsonURL = URL(string: searchString.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!)
-        let recipe = URLSession.shared.dataTask(with: jsonURL!) {
+        let searchString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=pizza"
+        
+        let url = URL(string: searchString.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!)
+        var request = URLRequest(url:url!)
+        request.setValue("X-RapidAPI-Host", forHTTPHeaderField: "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
+        request.setValue("X-RapidAPI-Key", forHTTPHeaderField: "e9a2e55382mshb4dae899b514712p102d18jsn1b4d6941ccb3")
+        let recipe = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             DispatchQueue.main.async {
                 self.indicator.stopAnimating()
@@ -58,9 +63,19 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
             
             do {
                 let decoder = JSONDecoder()
-                let 
+                let recipeData = try decoder.decode(RecipeData.self, from: data!)
+                // self.newRecipes = recipeData.
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            } catch let err {
+                DispatchQueue.main.async {
+                    self.displayMessage(title: "Error", msg: err.localizedDescription)
+                }
             }
         }
+        recipe.resume()
     }
     
     func displayMessage(title: String, msg: String) {
@@ -73,7 +88,7 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,6 +96,11 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
         return 0
     }
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipe = newRecipes[indexPath.row]
+        
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

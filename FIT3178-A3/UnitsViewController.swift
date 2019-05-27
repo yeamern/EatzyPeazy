@@ -18,7 +18,15 @@ class UnitsViewController: UIViewController{
     var sourcePickerData: [String] = [String]()
     var targetPickerData: [String] = [String]()
     
+
     @IBAction func convertButton(_ sender: Any) {
+        // ensure that values are valid
+        guard let _ = Float(quantityField.text!) else {
+            displayMessage(title: "Error", msg: "Please enter an integer or decimal")
+            return
+        }
+        
+        let quantity:Float? = Float(quantityField.text!)
     }
     
     override func viewDidLoad() {

@@ -1,17 +1,31 @@
 //
-//  HomeTableViewController.swift
+//  RsByIngredientsTableViewController.swift
 //  FIT3178-A3
 //
-//  Created by Yeamern Chuan on 30/4/19.
+//  Created by Yeamern Chuan on 27/5/19.
 //  Copyright © 2019 Yeamern Chuan. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class RsByIngredientsTableViewController: UITableViewController, UISearchBarDelegate {
 
+    var indicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "recipe title"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        definesPresentationContext = true
+        
+        indicator.style = UIActivityIndicatorView.Style.gray
+        indicator.center = self.tableView.center
+        self.view.addSubview(indicator)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,52 +34,23 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    
+    func displayMessage(title: String, msg: String) {
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if (section == 0 || section == 2) {
-            return 3
-        } else {
-            return 2
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.section == 3) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "bmiSegue", sender: self)
-            } else {
-                performSegue(withIdentifier: "nutritionalSegue", sender: self)
-            }
-        } else if (indexPath.section == 2) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "timerSegue", sender: self)
-            } else if (indexPath.row == 1) {
-                performSegue(withIdentifier: "unitSegue", sender: self)
-            } else if (indexPath.row == 2) {
-                performSegue(withIdentifier: "microwaveSegue", sender: self)
-            }
-        } else if (indexPath.section == 1) {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "shoppingListSegue", sender: self)
-            } else {
-                performSegue(withIdentifier: "expirySegue", sender: self)
-            }
-        } else {
-            if (indexPath.row == 0) {
-                performSegue(withIdentifier: "titleSegue", sender: self)
-            } else if (indexPath.row == 1) {
-                performSegue(withIdentifier: "ingredientsSegue", sender: self)
-            } else {
-                performSegue(withIdentifier: "availableSegue", sender: self)
-            }
-        }
+        return 0
     }
 
     /*
@@ -88,7 +73,7 @@ class HomeTableViewController: UITableViewController {
 
     /*
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
