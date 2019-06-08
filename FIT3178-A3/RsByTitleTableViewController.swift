@@ -13,6 +13,7 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
     let RECIPE_CELL = "recipeCell"
     var indicator = UIActivityIndicatorView()
     var newRecipes = [RecipeData]()
+    var selectedRecipe: RecipeData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +45,12 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
         indicator.startAnimating()
         indicator.backgroundColor = UIColor.white
         
-        let searchString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=pizza"
+        let searchString = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=\(searchText)"
         
         let url = URL(string: searchString.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!)
         var request = URLRequest(url:url!)
-        request.setValue("X-RapidAPI-Host", forHTTPHeaderField: "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
-        request.setValue("X-RapidAPI-Key", forHTTPHeaderField: "e9a2e55382mshb4dae899b514712p102d18jsn1b4d6941ccb3")
+        request.setValue("spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", forHTTPHeaderField: "X-RapidAPI-Host")
+        request.setValue("e9a2e55382mshb4dae899b514712p102d18jsn1b4d6941ccb3", forHTTPHeaderField: "X-RapidAPI-Key")
         let recipe = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             DispatchQueue.main.async {
@@ -63,8 +64,13 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
             
             do {
                 let decoder = JSONDecoder()
-                let recipeData = try decoder.decode(RecipeData.self, from: data!)
-                // self.newRecipes = recipeData.
+                let resultsData = try decoder.decode(ResultsData.self, from: data!)
+//                print(data?.description)
+//                print(resultsData)
+//                print(resultsData.results)
+                if let results = resultsData.results {
+                    self.newRecipes = results
+                }
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -92,24 +98,21 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return newRecipes.count
     }
 
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe = newRecipes[indexPath.row]
-        
+        self.selectedRecipe = recipe
+        performSegue(withIdentifier: "titleSegue", sender: self)
     }
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
+        cell.textLabel?.text = newRecipes[indexPath.row].title
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -146,14 +149,18 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "titleSegue" {
+            let dest = segue.destination as! RecipeTableViewController
+            dest.selectedRecipe = self.selectedRecipe
+        }
     }
-    */
+    
 
 }

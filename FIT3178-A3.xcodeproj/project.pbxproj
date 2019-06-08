@@ -31,6 +31,13 @@
 		ED7AD4ED229BC42E00E19BEA /* RsByIngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7AD4EC229BC42E00E19BEA /* RsByIngredientsTableViewController.swift */; };
 		ED7AD4F1229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7AD4F0229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift */; };
 		ED931D6422783540006C9758 /* MicrowaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED931D6322783540006C9758 /* MicrowaveViewController.swift */; };
+		ED985E2322AB5FDA00E06C58 /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED985E2222AB5FDA00E06C58 /* RecipeTableViewController.swift */; };
+		ED985E2522AB6EDA00E06C58 /* GetRecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED985E2422AB6EDA00E06C58 /* GetRecipeData.swift */; };
+		ED985E2722AB701000E06C58 /* IngredientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED985E2622AB701000E06C58 /* IngredientsData.swift */; };
+		ED985E2922ABA1F200E06C58 /* RecipeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED985E2822ABA1F200E06C58 /* RecipeImageTableViewCell.swift */; };
+		ED985E2F22ABB1B000E06C58 /* CaloriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED985E2E22ABB1B000E06C58 /* CaloriesData.swift */; };
+		ED985E3122ABB9FF00E06C58 /* NutritionalValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED985E3022ABB9FF00E06C58 /* NutritionalValueViewController.swift */; };
+		ED985E3322ABBEC300E06C58 /* RecipeTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED985E3222ABBEC300E06C58 /* RecipeTextTableViewCell.swift */; };
 		EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE40E2276C06F005F0050 /* AppDelegate.swift */; };
 		EDABE4112276C06F005F0050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABE4102276C06F005F0050 /* ViewController.swift */; };
 		EDABE4142276C06F005F0050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABE4122276C06F005F0050 /* Main.storyboard */; };
@@ -67,6 +74,13 @@
 		ED7AD4EC229BC42E00E19BEA /* RsByIngredientsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsByIngredientsTableViewController.swift; sourceTree = "<group>"; };
 		ED7AD4F0229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsIngrAvailableTableViewController.swift; sourceTree = "<group>"; };
 		ED931D6322783540006C9758 /* MicrowaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrowaveViewController.swift; sourceTree = "<group>"; };
+		ED985E2222AB5FDA00E06C58 /* RecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
+		ED985E2422AB6EDA00E06C58 /* GetRecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecipeData.swift; sourceTree = "<group>"; };
+		ED985E2622AB701000E06C58 /* IngredientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsData.swift; sourceTree = "<group>"; };
+		ED985E2822ABA1F200E06C58 /* RecipeImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeImageTableViewCell.swift; sourceTree = "<group>"; };
+		ED985E2E22ABB1B000E06C58 /* CaloriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesData.swift; sourceTree = "<group>"; };
+		ED985E3022ABB9FF00E06C58 /* NutritionalValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionalValueViewController.swift; sourceTree = "<group>"; };
+		ED985E3222ABBEC300E06C58 /* RecipeTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTextTableViewCell.swift; sourceTree = "<group>"; };
 		EDABE40B2276C06F005F0050 /* FIT3178-A3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-A3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABE40E2276C06F005F0050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDABE4102276C06F005F0050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +174,13 @@
 				ED7AD4E6229BB07000E19BEA /* RecipeData.swift */,
 				ED7AD4E8229BB1F100E19BEA /* ResultsData.swift */,
 				ED7AD4F0229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift */,
+				ED985E2222AB5FDA00E06C58 /* RecipeTableViewController.swift */,
+				ED985E2422AB6EDA00E06C58 /* GetRecipeData.swift */,
+				ED985E2622AB701000E06C58 /* IngredientsData.swift */,
+				ED985E2822ABA1F200E06C58 /* RecipeImageTableViewCell.swift */,
+				ED985E2E22ABB1B000E06C58 /* CaloriesData.swift */,
+				ED985E3022ABB9FF00E06C58 /* NutritionalValueViewController.swift */,
+				ED985E3222ABBEC300E06C58 /* RecipeTextTableViewCell.swift */,
 			);
 			path = "FIT3178-A3";
 			sourceTree = "<group>";
@@ -242,10 +263,14 @@
 				ED7AD4E7229BB07000E19BEA /* RecipeData.swift in Sources */,
 				BFF01F57227FF47D0080AAFF /* Item+CoreDataProperties.swift in Sources */,
 				ED1BB1DF22781F7200FE2120 /* HomeTableViewController.swift in Sources */,
+				ED985E2722AB701000E06C58 /* IngredientsData.swift in Sources */,
 				BFF01F51227FF1200080AAFF /* CoreDataController.swift in Sources */,
+				ED985E3322ABBEC300E06C58 /* RecipeTextTableViewCell.swift in Sources */,
 				EDCD119F22929F5A00243D99 /* ExpiryTableViewCell.swift in Sources */,
 				ED2DC32A229277FC0082BDBC /* Expiry+CoreDataClass.swift in Sources */,
+				ED985E2322AB5FDA00E06C58 /* RecipeTableViewController.swift in Sources */,
 				BFF01F53227FF1E60080AAFF /* MulticastDelegate.swift in Sources */,
+				ED985E2522AB6EDA00E06C58 /* GetRecipeData.swift in Sources */,
 				BFE302E3227EE208005EBAAB /* ShoppingListTableViewController.swift in Sources */,
 				EDABE4112276C06F005F0050 /* ViewController.swift in Sources */,
 				EDF4D2742280087400C58DD8 /* FirebaseController.swift in Sources */,
@@ -254,6 +279,7 @@
 				BFE302E5227EE4D9005EBAAB /* AddItemViewController.swift in Sources */,
 				ED7AD4F1229BCDCF00E19BEA /* RsIngrAvailableTableViewController.swift in Sources */,
 				BF7FC796229B699200453A5B /* RsByTitleTableViewController.swift in Sources */,
+				ED985E3122ABB9FF00E06C58 /* NutritionalValueViewController.swift in Sources */,
 				EDABE40F2276C06F005F0050 /* AppDelegate.swift in Sources */,
 				BF7FC790229B0B8C00453A5B /* UnitsData.swift in Sources */,
 				BF7FC78E229AE9F100453A5B /* UnitsViewController.swift in Sources */,
@@ -262,9 +288,11 @@
 				ED7AD4ED229BC42E00E19BEA /* RsByIngredientsTableViewController.swift in Sources */,
 				BF971BA4227C9A0700647B48 /* TimerViewController.swift in Sources */,
 				BFF01F46227FEE440080AAFF /* ShoppingList.xcdatamodeld in Sources */,
+				ED985E2F22ABB1B000E06C58 /* CaloriesData.swift in Sources */,
 				BFF01F42227FDB270080AAFF /* ShoppingItem.swift in Sources */,
 				EDF4D2782280104D00C58DD8 /* AddExpiryViewController.swift in Sources */,
 				ED931D6422783540006C9758 /* MicrowaveViewController.swift in Sources */,
+				ED985E2922ABA1F200E06C58 /* RecipeImageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

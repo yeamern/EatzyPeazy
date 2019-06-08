@@ -11,13 +11,13 @@ class RecipeData: NSObject, Decodable {
     var id: Int?
     var title: String?
     
-    private enum RecipeKeys: String, CodingKey {
+    private enum RootKeys: String, CodingKey {
         case id
         case title
     }
     
     required init(from decoder: Decoder) throws {
-        let recipeContainer = try decoder.container(keyedBy: RecipeKeys.self)
+        let recipeContainer = try decoder.container(keyedBy: RootKeys.self)
         self.id = try recipeContainer.decode(Int.self, forKey: .id)
         self.title = try recipeContainer.decode(String.self, forKey: .title)
     }
