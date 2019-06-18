@@ -9,32 +9,27 @@
 import Foundation
 
 class UnitsData: NSObject, Decodable {
-    var quantity: Decimal?
-    var source: String?
-    var target: String?
+    var valid: Bool?
+    var result: String?
+    var toType: String?
+    var fromType: String?
+    var fromValue: String?
     
-    private enum RootKeys: String, CodingKey {
-    	case root = "UCUMWebServiceResponse"
+    private enum CodingKeys: String, CodingKey {
+        case valid
+        case result
+        case toType = "to-type"
+        case fromType = "from-type"
+        case fromValue = "from-value"
     }
-    
-    private enum ResponseKeys: String, CodingKey {
-        case response = "Response"
-    }
-    
-    private enum UnitKeys: String, CodingKey {
-        case quantity = "SourceQuantity"
-        case sourceUnit = "SourceUnit"
-        case targetUnit = "TargetUnit"
-        case result = "ResultQuantity"
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let rootContainer = try decoder.container(keyedBy: RootKeys.self)
-        let responseContainer = try rootContainer.nestedContainer(keyedBy: ResponseKeys.self, forKey: .root)
-        let unitContainer = try responseContainer.nestedContainer(keyedBy: UnitKeys.self, forKey: .response)
-        
-        self.quantity = try unitContainer.decode(Decimal.self, forKey: .quantity)
-        self.source = try unitContainer.decode(String.self, forKey: .sourceUnit)
-        self.target = try unitContainer.decode(String.self, forKey: .targetUnit)
-    }
+//
+//    required init(from decoder: Decoder) throws {
+//        let rootContainer = try decoder.container(keyedBy: RootKeys.self)
+//        let responseContainer = try rootContainer.nestedContainer(keyedBy: ResponseKeys.self, forKey: .root)
+//        let unitContainer = try responseContainer.nestedContainer(keyedBy: UnitKeys.self, forKey: .response)
+//
+//        self.quantity = try unitContainer.decode(Decimal.self, forKey: .quantity)
+//        self.source = try unitContainer.decode(String.self, forKey: .sourceUnit)
+//        self.target = try unitContainer.decode(String.self, forKey: .targetUnit)
+//    }
 }

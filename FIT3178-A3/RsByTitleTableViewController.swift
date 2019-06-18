@@ -65,7 +65,7 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
             do {
                 let decoder = JSONDecoder()
                 let resultsData = try decoder.decode(ResultsData.self, from: data!)
-//                print(data?.description)
+//                print(data?.description)	
 //                print(resultsData)
 //                print(resultsData.results)
                 if let results = resultsData.results {

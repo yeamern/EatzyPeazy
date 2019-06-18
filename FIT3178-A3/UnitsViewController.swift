@@ -14,6 +14,7 @@ class UnitsViewController: UIViewController{
     @IBOutlet weak var sourceField: UITextField!
     @IBOutlet weak var targetField: UITextField!
     @IBOutlet weak var answerLabel: UILabel!
+    var indicator = UIActivityIndicatorView()
     
     var sourcePickerData: [String] = [String]()
     var targetPickerData: [String] = [String]()
@@ -27,10 +28,56 @@ class UnitsViewController: UIViewController{
         }
         
         let quantity:Float? = Float(quantityField.text!)
+        
+        let searchString = "https://neutrinoapi.com/convert?user-id=yeamern&api-key=x5bcUrn14QYpWv9852nK2B3Oj1OA9S9gMNLp3LYidVMxoqF0&from-value=\(quantityField.text!)&from-type=\(sourceField.text!)&to-type=\(targetField.text!)"
+        
+        let url = URL(string: searchString.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!)
+        let converter = URLSession.shared.dataTask(with: url!) {
+            (data, response, error) in
+            DispatchQueue.main.async {
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
+            }
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.displayMessage(title: "Error", msg: error.localizedDescription)
+                }
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let unitsData = try decoder.decode(UnitsData.self, from: data!)
+                //                print(data?.description)
+                //                print(resultsData)
+                //                print(resultsData.results)
+                if let valid = unitsData.valid, !valid {
+                    DispatchQueue.main.async {
+                        self.displayMessage(title: "Error", msg: "Specified units not supported. Try a different unit.")
+                    }
+                    return
+                }
+                
+                if let results = unitsData.result {
+                    DispatchQueue.main.async {
+                        let display = "\(self.quantityField.text!)\(self.sourceField.text!) = \(results)\(self.targetField.text!)"
+                        self.answerLabel.text = display
+                    }
+                }
+                
+            } catch let err {
+                DispatchQueue.main.async {
+                    self.displayMessage(title: "Error", msg: err.localizedDescription)
+                }
+            }
+        }
+        converter.resume()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        answerLabel.text = ""
     }
 
     func displayMessage(title: String, msg: String) {
