@@ -29,11 +29,6 @@ class ShoppingListTableViewController: UITableViewController, DatabaseListener {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // Add the view controller as a listener of the database controller
@@ -76,8 +71,6 @@ class ShoppingListTableViewController: UITableViewController, DatabaseListener {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             databaseController?.deleteItem(item: shoppingList[indexPath.row])
-            // self.shoppingList.remove(at: indexPath.row)
-            // tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     

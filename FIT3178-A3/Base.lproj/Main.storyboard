@@ -340,7 +340,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" id="NLg-39-pIe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" id="NLg-39-pIe" customClass="IngredientTableViewCell" customModule="FIT3178_A3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NLg-39-pIe" id="Vy0-xq-CGN">
@@ -434,7 +434,39 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Etv-I0-tqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="1845"/>
+            <point key="canvasLocation" x="2916" y="1845"/>
+        </scene>
+        <!--Recipes Available-->
+        <scene sceneID="tM0-Lo-Vqu">
+            <objects>
+                <tableViewController id="mYJ-fI-5HE" customClass="SearchedRecipesTableViewController" customModule="FIT3178_A3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7HM-8g-Kqa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="zHI-UH-At5">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zHI-UH-At5" id="rvT-Cj-qmj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mYJ-fI-5HE" id="K8w-L6-RJS"/>
+                            <outlet property="delegate" destination="mYJ-fI-5HE" id="dg9-CD-BgP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Recipes Available" id="VMj-Gx-p9K"/>
+                    <connections>
+                        <segue destination="M5v-gf-Og4" kind="show" identifier="availableSegue" id="U6t-cn-U1g"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iI4-cu-3Zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4054" y="1845"/>
         </scene>
         <!--Search by Ingredients Available-->
         <scene sceneID="Z8i-PD-KyY">
@@ -445,13 +477,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="aff-hi-fFj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="aff-hi-fFj" customClass="IngredientTableViewCell" customModule="FIT3178_A3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aff-hi-fFj" id="dG8-Vw-UrD">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX2-uR-eb1">
+                                            <rect key="frame" x="16" y="2" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJa-xc-URK">
+                                            <rect key="frame" x="16" y="23" width="343" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="yJa-xc-URK" secondAttribute="trailing" constant="16" id="7ni-eQ-MyP"/>
+                                        <constraint firstItem="IX2-uR-eb1" firstAttribute="top" secondItem="dG8-Vw-UrD" secondAttribute="top" constant="2" id="R0n-wv-9kR"/>
+                                        <constraint firstItem="IX2-uR-eb1" firstAttribute="leading" secondItem="dG8-Vw-UrD" secondAttribute="leading" constant="16" id="aSI-bA-3Ft"/>
+                                        <constraint firstAttribute="trailing" secondItem="IX2-uR-eb1" secondAttribute="trailing" constant="16" id="b3T-Es-uUR"/>
+                                        <constraint firstItem="yJa-xc-URK" firstAttribute="top" secondItem="IX2-uR-eb1" secondAttribute="bottom" id="fSC-da-M8A"/>
+                                        <constraint firstItem="yJa-xc-URK" firstAttribute="leading" secondItem="dG8-Vw-UrD" secondAttribute="leading" constant="16" id="hxU-Zy-5a0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="yJa-xc-URK" id="9m2-pp-zrr"/>
+                                    <outlet property="itemLabel" destination="IX2-uR-eb1" id="bOe-mv-ED7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -460,10 +518,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search by Ingredients Available" largeTitleDisplayMode="always" id="wQP-2c-ONn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="qwJ-3u-OvC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qwJ-3u-OvC">
+                            <connections>
+                                <action selector="searchRecipe:" destination="imQ-wk-fnO" id="qon-LO-vBm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="M5v-gf-Og4" kind="show" identifier="availableSegue" id="wQN-fA-F79"/>
+                        <segue destination="mYJ-fI-5HE" kind="show" identifier="searchSegue" id="IZA-Ir-C5W"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ds-eq-sVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1074,7 +1136,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wQN-fA-F79"/>
+        <segue reference="U6t-cn-U1g"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.46801391437628653" green="0.63386496113989632" blue="0.45528743153858314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

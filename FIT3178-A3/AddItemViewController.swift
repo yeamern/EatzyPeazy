@@ -41,7 +41,6 @@ class AddItemViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         databaseController = appDelegate.databaseController
 
-        // Do any additional setup after loading the view.
     }
     
 

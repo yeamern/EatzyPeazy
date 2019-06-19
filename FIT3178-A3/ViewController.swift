@@ -8,6 +8,7 @@
 
 import UIKit
 
+// BMI view controller
 class ViewController: UIViewController {
     
     @IBOutlet weak var weightField: UITextField!

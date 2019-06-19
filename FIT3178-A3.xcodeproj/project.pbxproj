@@ -13,6 +13,8 @@
 		BF7FC790229B0B8C00453A5B /* UnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7FC78F229B0B8C00453A5B /* UnitsData.swift */; };
 		BF7FC796229B699200453A5B /* RsByTitleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7FC795229B699200453A5B /* RsByTitleTableViewController.swift */; };
 		BF971BA4227C9A0700647B48 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF971BA3227C9A0700647B48 /* TimerViewController.swift */; };
+		BFB6861422BA45C70012735E /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6861322BA45C60012735E /* IngredientTableViewCell.swift */; };
+		BFB6861622BA52640012735E /* SearchedRecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6861522BA52640012735E /* SearchedRecipesTableViewController.swift */; };
 		BFE302DF227E63AC005EBAAB /* textFieldLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE302DE227E63AC005EBAAB /* textFieldLimit.swift */; };
 		BFE302E1227ED10A005EBAAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFE302E0227ED10A005EBAAB /* GoogleService-Info.plist */; };
 		BFE302E3227EE208005EBAAB /* ShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE302E2227EE208005EBAAB /* ShoppingListTableViewController.swift */; };
@@ -58,6 +60,8 @@
 		BF7FC78F229B0B8C00453A5B /* UnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsData.swift; sourceTree = "<group>"; };
 		BF7FC795229B699200453A5B /* RsByTitleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsByTitleTableViewController.swift; sourceTree = "<group>"; };
 		BF971BA3227C9A0700647B48 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		BFB6861322BA45C60012735E /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
+		BFB6861522BA52640012735E /* SearchedRecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedRecipesTableViewController.swift; sourceTree = "<group>"; };
 		BFE302DE227E63AC005EBAAB /* textFieldLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldLimit.swift; sourceTree = "<group>"; };
 		BFE302E0227ED10A005EBAAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFE302E2227EE208005EBAAB /* ShoppingListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 				ED985E3222ABBEC300E06C58 /* RecipeTextTableViewCell.swift */,
 				BF3DBA1322B8ABDB00AE83D6 /* NutrientsData.swift */,
 				BF3DBA1522B8B02800AE83D6 /* FoodData.swift */,
+				BFB6861322BA45C60012735E /* IngredientTableViewCell.swift */,
+				BFB6861522BA52640012735E /* SearchedRecipesTableViewController.swift */,
 			);
 			path = "FIT3178-A3";
 			sourceTree = "<group>";
@@ -295,9 +301,11 @@
 				BFF01F3F227FD92B0080AAFF /* AddItemDelegate.swift in Sources */,
 				ED7AD4ED229BC42E00E19BEA /* RsByIngredientsTableViewController.swift in Sources */,
 				BF971BA4227C9A0700647B48 /* TimerViewController.swift in Sources */,
+				BFB6861422BA45C70012735E /* IngredientTableViewCell.swift in Sources */,
 				BFF01F46227FEE440080AAFF /* ShoppingList.xcdatamodeld in Sources */,
 				ED985E2F22ABB1B000E06C58 /* CaloriesData.swift in Sources */,
 				BFF01F42227FDB270080AAFF /* ShoppingItem.swift in Sources */,
+				BFB6861622BA52640012735E /* SearchedRecipesTableViewController.swift in Sources */,
 				EDF4D2782280104D00C58DD8 /* AddExpiryViewController.swift in Sources */,
 				ED931D6422783540006C9758 /* MicrowaveViewController.swift in Sources */,
 				ED985E2922ABA1F200E06C58 /* RecipeImageTableViewCell.swift in Sources */,

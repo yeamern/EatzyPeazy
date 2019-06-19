@@ -38,6 +38,8 @@ class AddExpiryViewController: UIViewController {
             let _ = databaseController!.addExpiry(name: item, date: dateField.date)
             
             // notifications
+            // code reffered from - http://www.thomashanning.com/push-notifications-local-notifications-tutorial/
+            
             let content = UNMutableNotificationContent()
             content.title = "Food expiring soon!"
             content.body = "\(item) expires in 1 day"

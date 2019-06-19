@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         databaseController = CoreDataController()
         
+        // Notification
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound
         ]) { (granted, error) in
             print("granted: \(granted)")

@@ -18,6 +18,7 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // search bar
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -30,11 +31,6 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
         indicator.center = self.tableView.center
         self.view.addSubview(indicator)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -67,9 +63,6 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
             do {
                 let decoder = JSONDecoder()
                 let resultsData = try decoder.decode(ResultsData.self, from: data!)
-//                print(data?.description)	
-//                print(resultsData)
-//                print(resultsData.results)
                 if let results = resultsData.results {
                     self.newRecipes = results
                 }
@@ -154,7 +147,6 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
