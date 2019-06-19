@@ -10,6 +10,11 @@ import UIKit
 
 class RsIngrAvailableTableViewController: UITableViewController {
 
+    let CELL_ITEM = "itemCell"
+    var expiryList: [Expiry] = []
+    weak var databaseController: DatabaseProtocol?
+    var listenerType = ListenerType.expiry
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

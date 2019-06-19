@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AddExpiryViewController: UIViewController {
 
@@ -35,11 +36,24 @@ class AddExpiryViewController: UIViewController {
         if itemField.text != "" {
             
             let _ = databaseController!.addExpiry(name: item, date: dateField.date)
+            
+            // notifications
+            let content = UNMutableNotificationContent()
+            content.title = "Food expiring soon!"
+            content.body = "\(item) expires in 1 day"
+            content.sound = UNNotificationSound.default
+            
+            let triggerDate = Calendar.current.date(byAdding: .second, value: -86400, to: dateField.date)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerDate!), repeats: false)
+            let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
             navigationController?.popViewController(animated: true)
             displayMessagePop(title: "Saved", msg: "Item and expiry added")
         }
         
-        // ADD TASK not done
+        
+        
     }
     
     override func viewDidLoad() {

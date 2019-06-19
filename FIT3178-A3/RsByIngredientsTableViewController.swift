@@ -60,16 +60,15 @@ class RsByIngredientsTableViewController: UITableViewController, UISearchBarDele
                 self.indicator.hidesWhenStopped = true
             }
             if let error = error {
-                self.displayMessage(title: "Error", msg: error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.displayMessage(title: "Error", msg: error.localizedDescription)
+                }
                 return
             }
             
             do {
                 let decoder = JSONDecoder()
                 let recipes = try decoder.decode([RecipeData].self, from: data!)
-                //                print(data?.description)
-                //                print(resultsData)
-                //                print(resultsData.results)
                 self.newRecipes = recipes
                 
                 DispatchQueue.main.async {

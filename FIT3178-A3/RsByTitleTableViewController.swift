@@ -58,7 +58,9 @@ class RsByTitleTableViewController: UITableViewController, UISearchBarDelegate {
                 self.indicator.hidesWhenStopped = true
             }
             if let error = error {
-                self.displayMessage(title: "Error", msg: error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.displayMessage(title: "Error", msg: error.localizedDescription)
+                }
                 return
             }
             

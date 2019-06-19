@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3DBA1422B8ABDB00AE83D6 /* NutrientsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DBA1322B8ABDB00AE83D6 /* NutrientsData.swift */; };
+		BF3DBA1622B8B02800AE83D6 /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DBA1522B8B02800AE83D6 /* FoodData.swift */; };
 		BF7FC78E229AE9F100453A5B /* UnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7FC78D229AE9F100453A5B /* UnitsViewController.swift */; };
 		BF7FC790229B0B8C00453A5B /* UnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7FC78F229B0B8C00453A5B /* UnitsData.swift */; };
 		BF7FC796229B699200453A5B /* RsByTitleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7FC795229B699200453A5B /* RsByTitleTableViewController.swift */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF3DBA1322B8ABDB00AE83D6 /* NutrientsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientsData.swift; sourceTree = "<group>"; };
+		BF3DBA1522B8B02800AE83D6 /* FoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
 		BF7FC78D229AE9F100453A5B /* UnitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsViewController.swift; sourceTree = "<group>"; };
 		BF7FC78F229B0B8C00453A5B /* UnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsData.swift; sourceTree = "<group>"; };
 		BF7FC795229B699200453A5B /* RsByTitleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RsByTitleTableViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				ED985E2E22ABB1B000E06C58 /* CaloriesData.swift */,
 				ED985E3022ABB9FF00E06C58 /* NutritionalValueViewController.swift */,
 				ED985E3222ABBEC300E06C58 /* RecipeTextTableViewCell.swift */,
+				BF3DBA1322B8ABDB00AE83D6 /* NutrientsData.swift */,
+				BF3DBA1522B8B02800AE83D6 /* FoodData.swift */,
 			);
 			path = "FIT3178-A3";
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				BFF01F56227FF47D0080AAFF /* Item+CoreDataClass.swift in Sources */,
 				BFE302DF227E63AC005EBAAB /* textFieldLimit.swift in Sources */,
 				EDF4D2762280101300C58DD8 /* ExpiryTableViewController.swift in Sources */,
+				BF3DBA1622B8B02800AE83D6 /* FoodData.swift in Sources */,
 				ED7AD4E7229BB07000E19BEA /* RecipeData.swift in Sources */,
 				BFF01F57227FF47D0080AAFF /* Item+CoreDataProperties.swift in Sources */,
 				ED1BB1DF22781F7200FE2120 /* HomeTableViewController.swift in Sources */,
@@ -273,6 +280,7 @@
 				ED985E2522AB6EDA00E06C58 /* GetRecipeData.swift in Sources */,
 				BFE302E3227EE208005EBAAB /* ShoppingListTableViewController.swift in Sources */,
 				EDABE4112276C06F005F0050 /* ViewController.swift in Sources */,
+				BF3DBA1422B8ABDB00AE83D6 /* NutrientsData.swift in Sources */,
 				EDF4D2742280087400C58DD8 /* FirebaseController.swift in Sources */,
 				ED7AD4E9229BB1F100E19BEA /* ResultsData.swift in Sources */,
 				BFF01F4F227FEF590080AAFF /* DatabaseProtocol.swift in Sources */,

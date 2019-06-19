@@ -48,9 +48,6 @@ class UnitsViewController: UIViewController{
             do {
                 let decoder = JSONDecoder()
                 let unitsData = try decoder.decode(UnitsData.self, from: data!)
-                //                print(data?.description)
-                //                print(resultsData)
-                //                print(resultsData.results)
                 if let valid = unitsData.valid, !valid {
                     DispatchQueue.main.async {
                         self.displayMessage(title: "Error", msg: "Specified units not supported. Try a different unit.")

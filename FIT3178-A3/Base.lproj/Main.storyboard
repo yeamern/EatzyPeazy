@@ -478,14 +478,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nd-wV-65a">
-                                <rect key="frame" x="152" y="236" width="71" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nd-wV-65a">
+                                <rect key="frame" x="32" y="236" width="311" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtY-ik-B9V">
-                                <rect key="frame" x="166.5" y="302" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nutrients" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtY-ik-B9V">
+                                <rect key="frame" x="32" y="302" width="311" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -493,10 +493,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Mts-jA-m8N" firstAttribute="trailing" secondItem="3nd-wV-65a" secondAttribute="trailing" constant="32" id="003-3a-KBV"/>
                             <constraint firstItem="3nd-wV-65a" firstAttribute="centerX" secondItem="EG1-CR-qoP" secondAttribute="centerX" id="1bz-5G-r5D"/>
+                            <constraint firstItem="3nd-wV-65a" firstAttribute="leading" secondItem="Mts-jA-m8N" secondAttribute="leading" constant="32" id="64g-OZ-ifw"/>
                             <constraint firstItem="OtY-ik-B9V" firstAttribute="top" secondItem="3nd-wV-65a" secondAttribute="bottom" constant="30" id="QAi-1t-Guv"/>
                             <constraint firstItem="OtY-ik-B9V" firstAttribute="centerX" secondItem="EG1-CR-qoP" secondAttribute="centerX" id="ayd-HI-3nH"/>
                             <constraint firstItem="3nd-wV-65a" firstAttribute="top" secondItem="Mts-jA-m8N" secondAttribute="top" constant="120" id="cjO-nt-Xfi"/>
+                            <constraint firstItem="OtY-ik-B9V" firstAttribute="leading" secondItem="Mts-jA-m8N" secondAttribute="leading" constant="32" id="i18-mZ-BYn"/>
+                            <constraint firstItem="Mts-jA-m8N" firstAttribute="trailing" secondItem="OtY-ik-B9V" secondAttribute="trailing" constant="32" id="pjr-0d-H2L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mts-jA-m8N"/>
                     </view>
@@ -1070,7 +1074,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cG7-Dx-azj"/>
+        <segue reference="wQN-fA-F79"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.46801391437628653" green="0.63386496113989632" blue="0.45528743153858314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
