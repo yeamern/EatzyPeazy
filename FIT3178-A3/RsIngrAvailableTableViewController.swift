@@ -31,6 +31,7 @@ class RsIngrAvailableTableViewController: UITableViewController, DatabaseListene
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         databaseController?.addListener(listener: self)
+        expiryList = []
     }
     
     // Remove the view controller as a listener of the database controller

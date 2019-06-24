@@ -38,7 +38,6 @@ class NutritionalValueViewController: UIViewController, UISearchBarDelegate {
         let searchString = "https://api.edamam.com/api/food-database/parser?&ingr=\(separatedText)&app_id=459d6c40&app_key=2d5b6f118c5aa9836cacda90ed8db252"
         
         let url = URL(string: searchString.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!)
-//        let url = URL(string: searchString)
         let nutritionSearch = URLSession.shared.dataTask(with: url!) {
             (data, response, error) in
             DispatchQueue.main.async {
